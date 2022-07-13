@@ -43,5 +43,5 @@ jobs:
         shell: powershell
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"Martinez1991_Damm-Vulnerable-dotNet-Web-Application" /o:"martinez1991" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          build-wrapper-win-x86-64.exe --out-dir bw-output Damm-Vulnerable-dotNet-Web-Application
+          dotnet build --configuration Release --no-restore
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
